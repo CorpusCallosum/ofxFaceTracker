@@ -49,7 +49,7 @@ private:
                        const glm::vec3& left, const glm::vec3& right,
                        ofMesh& top, ofMesh& bottom) {
         auto avg = glm::mix(a, b, 0.5);
-        if(determinant(left.xy(), right.xy(), avg.xy()) < 0) {
+        if(determinant(glm::vec2(left), glm::vec2(right), glm::vec2(avg)) < 0) {
             top.addVertex(a);
             top.addVertex(b);
         } else {
